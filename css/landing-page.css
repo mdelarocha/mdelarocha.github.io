@@ -190,6 +190,46 @@ h6 {
     }
 }
 
+.experience-introduction {
+    padding: 40px 0 10px;
+}
+
+.experience-summary {
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.experience-entry .section-heading {
+    margin-bottom: 10px;
+}
+
+.experience-meta {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.experience-tech {
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #777;
+}
+
+.experience-list {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.experience-list li {
+    margin-bottom: 10px;
+}
+
+
 footer {
     padding: 50px 0;
     background-color: #f8f8f8;
