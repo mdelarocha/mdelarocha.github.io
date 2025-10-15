@@ -1,0 +1,319 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const hero = {
+  title: "Miguel Alejandro de la Rocha",
+  subtitle: "Software Engineering Student, Entrepreneur and Technology Enthusiast",
+  description:
+    "Online Portfolio and Home of Miguel Alejandro de la Rocha for projects and presentations.",
+  image: "/img/miguel.jpg"
+};
+
+const aboutParagraphs = [
+  "I'm a Software Engineering student at the University of Texas - Dallas Class 2019 with a passion for technology and innovation. Always willing to learn new frameworks and giving my all on my endeavors.",
+  "I co-founded a Web Development Studio, ZETA Designs, on the premise of improving the online platform of Honduran industries and individuals.",
+  "Having travelled to Europe and the Americas has opened my mind to new perspectives and concepts that I would like to share to the world through my work."
+];
+
+const experiences = [
+  {
+    title: "ZETA Designs (2017 - Present)",
+    role: "Chief Technology Officer",
+    image: "/img/services/zdesigns.png",
+    highlights: [
+      "Co-Founded ZETA Designs to develop web platforms for Honduran enterprises and businesses with professional and responsive frameworks.",
+      "Reached out and took control of building a client base through networking and professional communication.",
+      "Built the framework of operations for development and distribution of services for present and future clients per individual needs."
+    ]
+  },
+  {
+    title: "ASICA (Summer 2017)",
+    role: "Information Technology and Databases Intern",
+    image: "/img/services/asica.png",
+    highlights: [
+      "Interned at ASICA International in the Projects Division for Database Applications.",
+      "Developed a client application for a Credit Union to support accounting and human resources processes through Oracle Application Express and PL/SQL.",
+      "Designed and implemented a team project tracking tool to keep control of current tasks and goals."
+    ]
+  },
+  {
+    title: "Residential Life (2016 - Present)",
+    role: "Residential / Peer Advisor at University of Texas - Dallas",
+    image: "/img/services/utdallas.png",
+    highlights: [
+      "Supervised and served as mentor for a floor of 24 residents by leading through experience in academic, professional and personal matters.",
+      "Managed various administrative duties including maintenance requests, indicent reports and provided customer service at front desk office.",
+      "Utilized organizational and public speaking skills to create and implement social events for the Residence Hall."
+    ]
+  }
+];
+
+const projects = [
+  {
+    title: "REST API Twitter and Weather Chat Bot",
+    image: "/img/project/chatbot.png",
+    highlights: [
+      "Built a responsive chat bot that when prompted returns current top twitter trends and weather information for a given zipcode.",
+      "The implementation was done in Java through the use of RESTful services and APIs from Twitter and OpenWeather."
+    ],
+    link: {
+      label: "Project Documentation and Source",
+      href: "https://github.com/mdelarocha/chatbot-java"
+    }
+  }
+];
+
+const socialLinks = [
+  { label: "Twitter", href: "https://twitter.com/migueldelaroch1" },
+  { label: "GitHub", href: "https://github.com/mdelarocha" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/miguel-de-la-rocha-699327140" }
+];
+
+const email = "delarochamiguelalex@gmail.com";
+---
+<BaseLayout
+  title={hero.title}
+  description={hero.description}
+  metaImage="/img/banner-bg.jpg"
+>
+  <section id="hero" class="hero">
+    <div class="hero__content">
+      <h1>{hero.title}</h1>
+      <p class="hero__subtitle">{hero.subtitle}</p>
+      <p>{hero.description}</p>
+      <div class="hero__actions">
+        {socialLinks.map((link) => (
+          <a class="button" href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+        ))}
+        <a class="button button--outline" href={`mailto:${email}`}>Email</a>
+      </div>
+    </div>
+    <figure class="hero__media">
+      <img src={hero.image} alt="Portrait of Miguel Alejandro de la Rocha" loading="lazy" />
+    </figure>
+  </section>
+
+  <section id="about">
+    <div class="section__header">
+      <h2>About</h2>
+      <p>A refreshed Astro build will continue to spotlight the story behind the work.</p>
+    </div>
+    <div class="section__body">
+      {aboutParagraphs.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section__header">
+      <h2>Experience</h2>
+      <p>Historical highlights preserved from the Jekyll posts.</p>
+    </div>
+    <div class="cards">
+      {experiences.map((experience) => (
+        <article class="card">
+          <img src={experience.image} alt={experience.title} loading="lazy" />
+          <div class="card__content">
+            <h3>{experience.title}</h3>
+            <p class="card__role">{experience.role}</p>
+            <ul>
+              {experience.highlights.map((highlight) => (
+                <li>{highlight}</li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="section__header">
+      <h2>Project Portfolio</h2>
+      <p>Projects from the prior site are staged below for future Astro components.</p>
+    </div>
+    <div class="cards">
+      {projects.map((project) => (
+        <article class="card">
+          <img src={project.image} alt={project.title} loading="lazy" />
+          <div class="card__content">
+            <h3>{project.title}</h3>
+            <ul>
+              {project.highlights.map((highlight) => (
+                <li>{highlight}</li>
+              ))}
+              {project.link && (
+                <li>
+                  <a href={project.link.href} target="_blank" rel="noreferrer">{project.link.label}</a>
+                </li>
+              )}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section__header">
+      <h2>Contact</h2>
+      <p>Stay connected using the links carried over from the original configuration.</p>
+    </div>
+    <div class="contact__grid">
+      <div>
+        <h3>Email</h3>
+        <a href={`mailto:${email}`}>{email}</a>
+      </div>
+      <div>
+        <h3>Social</h3>
+        <ul class="contact__links">
+          {socialLinks.map((link) => (
+            <li>
+              <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+  }
+
+  .hero__subtitle {
+    font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+    color: #475569;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .hero__media {
+    justify-self: center;
+  }
+
+  .hero__media img {
+    width: min(280px, 100%);
+    border-radius: 50%;
+    border: 6px solid #e2e8f0;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    background: #0f172a;
+    color: #f8fafc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+  }
+
+  .button--outline {
+    background: transparent;
+    color: #0f172a;
+    border: 2px solid #0f172a;
+  }
+
+  .section__header {
+    max-width: 60ch;
+    margin-bottom: 2rem;
+  }
+
+  .cards {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  .card img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 200px;
+  }
+
+  .card__content {
+    padding: 1.5rem;
+  }
+
+  .card__role {
+    font-weight: 600;
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+  }
+
+  .card ul {
+    padding-left: 1.25rem;
+  }
+
+  .card ul li + li {
+    margin-top: 0.5rem;
+  }
+
+  .contact__grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .contact__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .contact__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .contact__links a {
+    color: #1d4ed8;
+    text-decoration: none;
+  }
+
+  .contact__links a:hover {
+    text-decoration: underline;
+  }
+</style>

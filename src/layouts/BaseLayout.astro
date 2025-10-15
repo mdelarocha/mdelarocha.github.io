@@ -1,0 +1,74 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  metaImage?: string;
+}
+
+const {
+  title = "Miguel Alejandro de la Rocha",
+  description = "Online portfolio for Miguel Alejandro de la Rocha showcasing experience and projects.",
+  metaImage = "/img/banner-bg.jpg"
+} = Astro.props as Props;
+
+const currentYear = new Date().getFullYear();
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={metaImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={metaImage} />
+    <link rel="icon" href="/img/favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-nav" href="#main">Skip to content</a>
+    <main id="main">
+      <slot />
+    </main>
+    <footer>
+      <p>&copy; {currentYear} Miguel A. de la Rocha. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :global(body) {
+    position: relative;
+  }
+
+  .skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 1rem;
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 0.5rem 1rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    transition: top 0.2s ease-out;
+    text-decoration: none;
+    z-index: 100;
+  }
+
+  .skip-nav:focus {
+    top: 0;
+  }
+</style>
