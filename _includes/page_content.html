@@ -2,55 +2,128 @@
 <section id="services">
     <div class="banner2" style="background-attachment: fixed;">
         <div class="container">
-            <h2> Experience </h2>
+            <h2>Experience</h2>
         </div>
     </div>
 
-    <!-- Page Content -->
-    {% for post in site.categories["Services"] reversed %} {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %} {% if thecycle == 'even' %}
-    <div class="content-section-a">
+    <div class="container experience-introduction">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12">
+                <p class="lead experience-summary">
+                    Seasoned engineering leader and founding engineer delivering measurable business outcomes through
+                    data-rich platforms, developer enablement, and resilient cloud services.
+                </p>
+            </div>
+        </div>
+    </div>
 
+    <div class="content-section-a experience-entry">
         <div class="container">
-
             <div class="row">
-                <div class="col-lg-5 col-sm-6">
+                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">{{ post.title }}</h2>
-                    <div class="lead">{{ post.content }}</div>
-                </div>
-                <div class="col-lg-6 col-lg-offset-1 col-sm-6" style="float:right; vertical-align: middle;">
-                    <img class="img-responsive" src="img/services/{{ post.img }}" alt="">
+                    <h3 class="section-heading">Granted (formerly Medbill AI)</h3>
+                    <p class="experience-meta lead">Founding Software Engineer &middot; Jan 2024 &ndash; Present &middot; Remote, US</p>
+                    <p class="experience-tech">TypeScript &middot; NestJS</p>
+                    <ul class="experience-list">
+                        <li>Own the engineering vision as the first technical hire, translating customer insights into a scalable roadmap and iterative delivery cadence.</li>
+                        <li>Design and build secure TypeScript/NestJS services that power the core platform experience for early customers.</li>
+                        <li>Partner with the founding team on architecture, hiring, and go-to-market strategy to balance rapid iteration with reliability.</li>
+                    </ul>
                 </div>
             </div>
-
         </div>
-        <!-- /.container -->
-
     </div>
-    <!-- /.content-section-a -->
-    {% else %}
 
-    <div class="content-section-b">
-
+    <div class="content-section-b experience-entry">
         <div class="container">
-
             <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">{{ post.title }}</h2>
-                    <div class="lead">{{ post.content }}</div>
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6" style="float:left; vertical-align: bottom;">
-                    <img class="img-responsive" src="img/services/{{ post.img }}" alt="">
+                    <h3 class="section-heading">Lambent Spaces</h3>
+                    <p class="experience-meta lead">Senior Software Engineer &middot; Feb 2022 &ndash; Jan 2024 &middot; Boston, MA</p>
+
+                    <ul class="experience-list">
+                        <li>Architected a Databricks lakehouse and governance model that delivered location intelligence 70% faster to enterprise customers.</li>
+                        <li>Optimized real-time occupancy dashboards, reducing load times from 3 minutes to 15 seconds to unlock daily executive use.</li>
+                        <li>Delivered customer-facing APIs with 99.9% uptime to power new analytics experiences and revenue streams.</li>
+                        <li>Led a cross-functional team of 10 developers through roadmap planning, code reviews, and technical mentorship.</li>
+                        <li>Redesigned CI/CD pipelines, shrinking build times from 15 minutes to 2 minutes while automating quality and security gates.</li>
+                    </ul>
                 </div>
             </div>
-
         </div>
-        <!-- /.container -->
-
     </div>
-    <!-- /.content-section-b -->
-    {% endif %} {% endfor %}
+
+    <div class="content-section-a experience-entry">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h3 class="section-heading">Capital One</h3>
+                    <p class="experience-meta lead">Senior Software Engineer &middot; Feb 2022 &middot; Richmond, VA</p>
+                    <ul class="experience-list">
+                        <li>Provided hands-on mentorship to engineering squads during a high-velocity onboarding sprint.</li>
+                        <li>Drove data and resiliency requirements for an upcoming database migration, informing system design decisions.</li>
+                        <li>Facilitated product and engineering workshops to align modernization priorities with business goals.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-b experience-entry">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h3 class="section-heading">Capital One</h3>
+                    <p class="experience-meta lead">Software Engineer &middot; Jan 2021 &ndash; Jan 2022</p>
+                    <ul class="experience-list">
+                        <li>Built a call transcript ingestion pipeline that eliminated 2,000 hours of manual developer effort and saved $72K annually.</li>
+                        <li>Partnered with cybersecurity and compliance teams to harden authentication and data retention controls across key products.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-a experience-entry">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h3 class="section-heading">Capital One</h3>
+                    <p class="experience-meta lead">Associate Data Engineer &middot; Aug 2019 &ndash; Feb 2021</p>
+                    <ul class="experience-list">
+                        <li>Delivered Real Time Fund Availability capabilities that drove $4B in incremental spend and $45M in annual revenue.</li>
+                        <li>Maintained a credit card payments platform handling 2M daily transactions and $100M+ in monthly volume.</li>
+                        <li>Championed performance testing and resiliency drills to safeguard mission-critical customer experiences.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-b experience-entry">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h3 class="section-heading">JPMorgan Chase &amp; Co.</h3>
+                    <p class="experience-meta lead">Software Engineering Intern &middot; Jun 2018 &ndash; May 2019 &middot; Plano, TX</p>
+                    <ul class="experience-list">
+                        <li>Developed an operations dashboard that reduced recovery time objective by 90% for campus services.</li>
+                        <li>Implemented Kubernetes- and Spring Boot-based backend services to modernize legacy workloads and accelerate deployments.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
